@@ -229,18 +229,43 @@
     <section class="container py-5">
         <div class="section-title">Event Gallery</div>
         <div class="gallery-grid">
-            <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-event-1_l.jpg" alt="Event 1" class="gallery-img">
-            <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-event-2_l.jpg" alt="Event 2" class="gallery-img">
-            <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-event-3_l.jpg" alt="Event 3" class="gallery-img">
-            <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-event-4_l.jpg" alt="Event 4" class="gallery-img">
-            <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-event-5_l.jpg" alt="Event 5" class="gallery-img">
-            <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-event-6_l.jpg" alt="Event 6" class="gallery-img">
+            <img src="/images/1.jpg" alt="Event 1" class="gallery-img">
+            <img src="/images/2.jpg" alt="Event 2" class="gallery-img">
+            <img src="/images/3.jpg" alt="Event 3" class="gallery-img">
+            <img src="/images/4.jpg" alt="Event 4" class="gallery-img">
+            <img src="/images/5.jpg" alt="Event 5" class="gallery-img">
+            <img src="/images/6.jpg" alt="Event 6" class="gallery-img">
         </div>
     </section>
 
     <!-- History & Achievements -->
     <section class="container py-5">
-        <div class="section-title">Server History & Achievements</div>
+        <div class="section-title">Achievements</div>
+        <div class="history-timeline">
+            <div class="history-card">
+                <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-history-1_l.jpg" alt="History 1" class="history-img">
+                <div class="fw-bold mt-2">Server Launch</div>
+                <div class="text-muted">Jan 2022</div>
+                <div>BlockWorld SMP goes live!</div>
+            </div>
+            <div class="history-card">
+                <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-history-2_l.jpg" alt="History 2" class="history-img">
+                <div class="fw-bold mt-2">First Event</div>
+                <div class="text-muted">Feb 2022</div>
+                <div>Our first building contest with 50+ players.</div>
+            </div>
+            <div class="history-card">
+                <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-history-3_l.jpg" alt="History 3" class="history-img">
+                <div class="fw-bold mt-2">Major Update</div>
+                <div class="text-muted">Aug 2022</div>
+                <div>Upgraded to Minecraft 1.20 with new features!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History & Achievements -->
+    <section class="container py-5">
+        <div class="section-title">Server</div>
         <div class="history-timeline">
             <div class="history-card">
                 <img src="https://static.planetminecraft.com/files/resource_media/screenshot/1234/minecraft-history-1_l.jpg" alt="History 1" class="history-img">
