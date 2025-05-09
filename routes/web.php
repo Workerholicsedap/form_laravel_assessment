@@ -15,7 +15,7 @@ use App\Http\Controllers\MemberController;
 */
 
 Route::get('/', function () {
-    return view('member.create');
+    return view('home');
 });
 
 Route::get('/member/create', [MemberController::class, 'create'])->name('member.create');
