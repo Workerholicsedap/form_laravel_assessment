@@ -154,46 +154,64 @@
     <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
 </head>
 <body>
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg" style="background:#23272a; box-shadow:0 2px 8px rgba(0,0,0,0.12);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/images/logo.png" alt="Server Logo" style="height:40px; width:40px; object-fit:cover; border-radius:8px; margin-right:12px; background:#181a1b;" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span style="font-family:'Minecraftia',monospace,Arial,sans-serif; font-size:1.5rem; color:#62b34e; display:none;">PerangOnline SMP</span>
+            </a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <a href="/story" class="nav-link" style="color:#e2e2e2; font-weight:500;">Story</a>
+                <a href="/gallery" class="nav-link" style="color:#e2e2e2; font-weight:500;">Gallery</a>
+                <a href="/build" class="nav-link" style="color:#e2e2e2; font-weight:500;">Build</a>
+                <a href="/admin/login" class="btn btn-mc" style="font-size:1rem; padding:0.5rem 1.5rem;">Admin Login</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section class="minecraft-hero">
         <div class="container hero-content">
             <h1>PerangOnline SMP</h1>
             <p>Bosan main solo? Jom join PerangOnline SMP untuk build dan fight bersama member2 korang</p>
-            <a href="#" class="btn btn-mc">Join Now</a>
+            <a href="/server" class="btn btn-mc">Join Now</a>
         </div>
     </section>
 
     <!-- Player Showcase -->
     <section class="container py-5">
         <div class="section-title">Our Players</div>
-        <div class="row row-cols-2 row-cols-md-4 g-4 player-grid">
-            <div class="col">
-                <div class="card p-2 text-center">
-                    <img src="https://minotar.net/avatar/Notch/100" alt="Player 1" class="mx-auto" width="80">
-                    <div class="fw-bold text-light">.Andrex</div>
-                </div>
+        <div id="playerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @foreach($players as $player)
+                    <div class="carousel-item @if($loop->first) active @endif">
+                        <div class="row justify-content-center align-items-center">
+                        <div class="col-md-4 text-center">
+                            <img src="{{ $player->uuid }}" alt="Player Skin" style="width:250px;height:auto;">
+                        </div>
+                            <div class="col-md-6">
+                                <div class="card bg-dark text-light p-4" style="border-radius:12px;">
+                                    <h3 class="mb-2" style="font-family:'Minecraftia',monospace,Arial,sans-serif; color:#62b34e;">{{ $player->name }}</h3>
+                                    <!-- <div><strong>UUID:</strong> {{ $player->uuid }}</div> -->
+                                    <div><strong>Role:</strong> {{ $player->role }}</div>
+                                    <div><strong>Hobby:</strong> {{ $player->hobby }}</div>
+                                    <div><strong>Rank:</strong> {{ $player->rank }}</div>
+                                    <div class="mt-2">{{ $player->description }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            <div class="col">
-                <div class="card p-2 text-center">
-                    <img src="https://minotar.net/avatar/Dream/100" alt="Player 2" class="mx-auto" width="80">
-                    <div class="fw-bold text-light">Aifiq</div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card p-2 text-center">
-                    <img src="https://minotar.net/avatar/Technoblade/100" alt="Player 3" class="mx-auto" width="80">
-                    <div class="fw-bold text-light">Hantu</div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card p-2 text-center">
-                    <img src="https://minotar.net/avatar/Alex/100" alt="Player 4" class="mx-auto" width="80">
-                    <div class="fw-bold text-light">Aufa</div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-4">
-            <a href="#" class="btn btn-outline-light btn-sm">See All Players</a>
+            <button class="carousel-control-prev" type="button" data-bs-target="#playerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#playerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 
@@ -203,7 +221,7 @@
         <div class="row justify-content-center g-4">
             <div class="col-md-3">
                 <div class="admin-card">
-                    <img src="https://minotar.net/avatar/Admin/100" alt="Admin 1" class="admin-img">
+                    <img src="https://minotar.net/avatar/fcfea5ef-ebdc-4115-a994-378b3aea6035/100" alt="Admin 1" class="admin-img">
                     <div class="fw-bold">Dauss</div>
                     <div class="fw-bold">Server Owner</div>
                 </div>

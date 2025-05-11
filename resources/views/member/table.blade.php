@@ -94,6 +94,48 @@
         </div>
     </div>
 
+    <div class="card shadow mb-5">
+        <div class="card-header bg-info text-white fw-semibold">Players</div>
+        <div class="card-body p-0">
+            <table class="table table-hover m-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>UUID</th>
+                        <th>Role</th>
+                        <th>Hobby</th>
+                        <th>Rank</th>
+                        <th>Description</th>
+                        <th>Created At</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($players as $player)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $player->name }}</td>
+                            <td>{{ $player->uuid }}</td>
+                            <td>{{ $player->role }}</td>
+                            <td>{{ $player->hobby }}</td>
+                            <td>{{ $player->rank }}</td>
+                            <td>{{ $player->description }}</td>
+                            <td>{{ $player->created_at ? $player->created_at->format('d M Y, h:i A') : '-' }}</td>
+                            <td>
+                                <form action="{{ route('player.delete', $player->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Delete player?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     <div class="text-end">
         <a href="{{ route('member.create') }}" class="btn btn-primary">
             <i class="bi bi-plus-circle"></i> Add New Member

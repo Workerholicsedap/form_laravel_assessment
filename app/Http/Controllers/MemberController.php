@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Member;
+use App\Models\Player;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -41,8 +42,9 @@ class MemberController extends Controller
     {
         $activeMembers = Member::where('status_active', true)->get();
         $inactiveMembers = Member::where('status_active', false)->get();
+        $players = Player::all();
 
-        return view('member.table', compact('activeMembers', 'inactiveMembers'));
+        return view('member.table', compact('activeMembers', 'inactiveMembers', 'players'));
     }
 
     // Soft delete members
